@@ -1,11 +1,15 @@
 // PopupContext.tsx
 import React, {
-  createContext, useContext, useReducer, ReactNode, useMemo,
+  createContext, ReactNode, useContext, useMemo, useReducer,
 } from 'react';
 
 // Define the Popup state interface
 interface PopupState {
-  popups: { name: string; Content: React.FC<IPopup<unknown>>, additionalParameter?: unknown }[];
+  popups: {
+    name: string;
+    Content: React.FC<IPopup<unknown>>,
+    additionalParameter?: unknown
+  }[];
 }
 
 enum POPUP_ACTIONS {
@@ -18,15 +22,22 @@ export interface IPopup<T> {
   additionalParameter: T
 }
 
-type IOpenPopup<T = unknown> = {
+type IOpenPopupPayload<T = any> = {
+  name: string;
+  content: React.FC<IPopup<T>>,
+  additionalParameter?: T
+};
+
+type IOpenPopup = {
   type: POPUP_ACTIONS.OPEN_POPUP;
+  payload: IOpenPopupPayload
+};
+type IClosePopup = {
+  type: POPUP_ACTIONS.CLOSE_POPUP;
   payload: {
-    name: string;
-    content: React.FC<IPopup<T>>,
-    additionalParameter?: T
+    name: string
   }
 };
-type IClosePopup = { type: POPUP_ACTIONS.CLOSE_POPUP; payload: { name: string } };
 // Define the action types
 type PopupAction =
     | IOpenPopup
@@ -41,8 +52,8 @@ const initialState: PopupState = {
 const PopupContext = createContext<{
   state: PopupState;
   actions: {
-    openPopup:(params: IOpenPopup['payload'])=>void
-    closePopup:(params: IClosePopup['payload'])=>void
+    openPopup:(params: IOpenPopupPayload) => void
+    closePopup: (params: IClosePopup['payload']) => void
   }
 } | undefined>(undefined);
 
@@ -75,7 +86,9 @@ const popupReducer = (state: PopupState, action: PopupAction): PopupState => {
 };
 
 // Create the PopupProvider component
-export const PopupProvider = ({ children }: { children: ReactNode }) => {
+export const PopupProvider = ({ children }: {
+  children: ReactNode
+}) => {
   const [state, dispatch] = useReducer(popupReducer, initialState);
 
   const openPopup = (payload: IOpenPopup['payload']) => {

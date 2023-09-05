@@ -1,4 +1,5 @@
 import React from 'react';
+import { Dialog } from '@headlessui/react';
 import { usePopup } from '../../context';
 
 export const PopUpContainer: React.FC<{
@@ -12,11 +13,14 @@ export const PopUpContainer: React.FC<{
   };
 
   return (
-    <div
-      className="w-screen h-screen flex justify-center items-center pointer-events-auto"
-      onClick={close}
+    <Dialog
+      open
+      onClose={close}
+      className="w-screen h-screen flex  justify-center items-center pointer-events-auto"
     >
-      {children}
-    </div>
+      <Dialog.Panel>
+        {children}
+      </Dialog.Panel>
+    </Dialog>
   );
 };

@@ -14,6 +14,9 @@ export const useJoinToGroup = ({
     openPopup({
       name: POPUPS.ENGAGE_APPLY,
       content: EngageApplyPopup,
+      additionalParameter: {
+        groupId,
+      },
     });
   };
 
