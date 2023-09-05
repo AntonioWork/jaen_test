@@ -5,7 +5,7 @@ import React, {
 
 // Define the Popup state interface
 interface PopupState {
-  popups: { name: string; content: ReactNode }[];
+  popups: { name: string; Content: React.FC<IPopup<unknown>>, additionalParameter?: unknown }[];
 }
 
 enum POPUP_ACTIONS {
@@ -13,7 +13,19 @@ enum POPUP_ACTIONS {
   CLOSE_POPUP = 'CLOSE_POPUP',
 }
 
-type IOpenPopup = { type: POPUP_ACTIONS.OPEN_POPUP; payload: { name: string; content: ReactNode } };
+export interface IPopup<T> {
+  name: string
+  additionalParameter: T
+}
+
+type IOpenPopup<T = unknown> = {
+  type: POPUP_ACTIONS.OPEN_POPUP;
+  payload: {
+    name: string;
+    content: React.FC<IPopup<T>>,
+    additionalParameter?: T
+  }
+};
 type IClosePopup = { type: POPUP_ACTIONS.CLOSE_POPUP; payload: { name: string } };
 // Define the action types
 type PopupAction =
@@ -38,17 +50,17 @@ const PopupContext = createContext<{
 const popupReducer = (state: PopupState, action: PopupAction): PopupState => {
   switch (action.type) {
     case POPUP_ACTIONS.OPEN_POPUP: {
-      const { content, name } = action.payload;
+      const { content, name, additionalParameter } = action.payload;
       // Check if a popup with the same name already exists
       const existingPopupIndex = state.popups.findIndex((popup) => popup.name === name);
       if (existingPopupIndex !== -1) {
         // Replace the existing popup
-        state.popups[existingPopupIndex] = { name, content };
+        state.popups[existingPopupIndex] = { name, Content: content, additionalParameter };
         return { ...state };
       }
       // Add a new popup
       return {
-        popups: [...state.popups, { name, content }],
+        popups: [...state.popups, { name, Content: content, additionalParameter }],
       };
     }
     case POPUP_ACTIONS.CLOSE_POPUP: {
