@@ -4,7 +4,7 @@ import { usePopup } from '../../context';
 export const PopupViewer = () => {
   const { state } = usePopup();
   return (
-    <div>
+    <div className="absolute w-screen h-screen pointer-events-none">
       {state.popups
         .map((Popup) => (
           <Popup.Content

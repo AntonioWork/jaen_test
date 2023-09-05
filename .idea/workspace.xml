@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b9c8309d-0731-4494-b635-4f65cdfa3282" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/org/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/org/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apps/org/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/org/apps/org/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/apps/org/src/app/app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/org/apps/org/src/app/app.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/org/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/org/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/org/package.json" afterDir="false" />
+    <list default="true" id="b9c8309d-0731-4494-b635-4f65cdfa3282" name="Changes" comment="feat(popup): implement popup">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,13 +21,16 @@
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/org" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="01235301-3385-4d95-bff4-05d7266cbeb9" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -47,7 +46,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "D:/work/jaen_test/jaen_test_task/src",
+    "last_opened_file_path": "D:/work/jaen_test/jaen_test_task",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -95,11 +94,26 @@
       <updated>1693847127919</updated>
       <workItem from="1693847128959" duration="631000" />
       <workItem from="1693847861207" duration="12090000" />
+      <workItem from="1693897461789" duration="2000" />
+      <workItem from="1693897481138" duration="2508000" />
     </task>
+    <task id="LOCAL-00001" summary="feat(popup): implement popup">
+      <option name="closed" value="true" />
+      <created>1693899946728</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1693899946728</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="feat(popup): implement popup" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(popup): implement popup" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -107,13 +121,11 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/jaen_test_task/src/mock/MOCK_ENGAGE_GROUPS.ts</url>
           <line>113</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/jaen_test_task/src/mock/MOCK_ENGAGE_GROUPS.ts</url>
           <line>3</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>

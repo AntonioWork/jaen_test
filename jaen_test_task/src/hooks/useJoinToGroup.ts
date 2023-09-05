@@ -11,14 +11,14 @@ export const useJoinToGroup = ({
   const { openPopup } = usePopup().actions;
 
   const applyToGroup = () => {
-
-  };
-
-  const joinToGroup = () => {
     openPopup({
       name: POPUPS.ENGAGE_APPLY,
       content: EngageApplyPopup,
     });
+  };
+
+  const joinToGroup = () => {
+
   };
   return {
     isUserCanJoin,
