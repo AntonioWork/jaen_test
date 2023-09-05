@@ -1,5 +1,5 @@
-import { MOCK_ENGAGE_GROUPS } from '../mock';
+import { mockEngageGroups } from '../mock';
 
 export const useGetGroupByIdQuery = (groupId: string) => {
-  return MOCK_ENGAGE_GROUPS.find((group) => group.id === groupId);
+  return mockEngageGroups.find((group) => group.id === groupId);
 };

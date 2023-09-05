@@ -1,6 +1,6 @@
 import { useGetGroupByIdQuery } from '../api';
 import { usePopup } from '../context';
-import { POPUPS } from '../constant';
+import { Popups } from '../constant';
 import { EngageApplyPopup } from '../components/Engage/EngageApplyPopup';
 
 export const useJoinToGroup = ({
@@ -19,7 +19,7 @@ export const useJoinToGroup = ({
   const openApplyPopup = () => {
     if (group) {
       openPopup({
-        name: POPUPS.ENGAGE_APPLY,
+        name: Popups.engageApply,
         content: EngageApplyPopup,
         additionalParameter: {
           groupName: group.name,

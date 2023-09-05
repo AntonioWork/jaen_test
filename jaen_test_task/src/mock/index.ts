@@ -1,1 +1,1 @@
-export * from './MOCK_ENGAGE_GROUPS';
+export * from './mockEngageGroups';

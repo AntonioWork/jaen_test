@@ -1,6 +1,6 @@
 import { IEngagementGroup } from '../interface';
 
-export const MOCK_ENGAGE_GROUPS: IEngagementGroup[] = [
+export const mockEngageGroups: IEngagementGroup[] = [
   {
     id: '64f65d8ca4810e14fe0eb8be',
     name: 'Bonner Cross',

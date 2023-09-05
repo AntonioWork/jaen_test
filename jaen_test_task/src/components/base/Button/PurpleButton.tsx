@@ -1,7 +1,7 @@
 import React, { ButtonHTMLAttributes } from 'react';
 
-export const PurpleButton: React.FC<
-ButtonHTMLAttributes<HTMLButtonElement>> = ({ className, ...props }) => {
+export const PurpleButton:
+React.FC<ButtonHTMLAttributes<HTMLButtonElement>> = ({ className, ...props }) => {
   return (
     <button
       className={[`hover:cursor-pointer h-6 bg-primary  bg-gradient-to-r 

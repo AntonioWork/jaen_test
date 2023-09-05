@@ -1,5 +1,5 @@
 import { EngageCardList, PopupViewer } from './components';
-import { MOCK_ENGAGE_GROUPS } from './mock';
+import { mockEngageGroups } from './mock';
 import { PopupProvider } from './context';
 
 export const App = () => {
@@ -8,8 +8,7 @@ export const App = () => {
       <div className="text-base-content theme-dark h-screen w-screen bg-base-300">
         <PopupViewer />
         <div>
-
-          <EngageCardList groups={MOCK_ENGAGE_GROUPS} />
+          <EngageCardList groups={mockEngageGroups} />
         </div>
       </div>
     </PopupProvider>

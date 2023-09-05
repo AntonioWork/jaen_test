@@ -7,7 +7,7 @@ import { IEngagementEnterRequirement } from '../../interface';
 export const EngageApplyPopup: React.FC<IPopup<{
   groupName: string
   entranceRequirements: IEngagementEnterRequirement[]
-  apply: ()=> void
+  apply: () => void
 }>> = ({ additionalParameter, name }) => {
   const { closePopup } = usePopup().actions;
 
@@ -17,7 +17,9 @@ export const EngageApplyPopup: React.FC<IPopup<{
 
   return (
     <PopUpContainer name={name}>
-      <div className="relative transform rounded-lg bg-base-300 px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full max-w-xl null sm:p-6 opacity-100 translate-y-0 sm:scale-100">
+      <div
+        className="relative transform rounded-lg bg-base-300 px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full max-w-xl null sm:p-6 opacity-100 translate-y-0 sm:scale-100"
+      >
         <div>
           <div className="flex justify-between">
             <div className="flex">
