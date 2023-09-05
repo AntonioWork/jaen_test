@@ -6,18 +6,28 @@ import { EngageApplyPopup } from '../components/Engage/EngageApplyPopup';
 export const useJoinToGroup = ({
   groupId,
 }: { groupId: string }) => {
-  const isUserCanJoin = !useGetGroupByIdQuery(groupId)?.isPrivate || false;
+  const group = useGetGroupByIdQuery(groupId);
+
+  const isUserCanJoin = group?.isPrivate || false;
 
   const { openPopup } = usePopup().actions;
 
-  const applyToGroup = () => {
-    openPopup({
-      name: POPUPS.ENGAGE_APPLY,
-      content: EngageApplyPopup,
-      additionalParameter: {
-        groupId,
-      },
-    });
+  const sendPopup = () => {
+    // TODO
+  };
+
+  const openApplyPopup = () => {
+    if (group) {
+      openPopup({
+        name: POPUPS.ENGAGE_APPLY,
+        content: EngageApplyPopup,
+        additionalParameter: {
+          groupName: group.name,
+          apply: sendPopup,
+          entranceRequirements: group.entranceRequirements,
+        },
+      });
+    }
   };
 
   const joinToGroup = () => {
@@ -25,7 +35,7 @@ export const useJoinToGroup = ({
   };
   return {
     isUserCanJoin,
-    applyToGroup,
+    openApplyPopup,
     joinToGroup,
   };
 };

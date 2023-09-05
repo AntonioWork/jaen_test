@@ -7,7 +7,7 @@ export const App = () => {
     <PopupProvider>
       <div className="text-base-content theme-dark h-screen w-screen bg-base-300">
         <PopupViewer />
-        <div className="  ">
+        <div>
 
           <EngageCardList groups={MOCK_ENGAGE_GROUPS} />
         </div>

@@ -6,7 +6,7 @@ import { Badge, Button } from '../base';
 export const EngageCard: React.FC<{
   group: IEngagementGroup
 }> = ({ group }) => {
-  const { joinToGroup, isUserCanJoin, applyToGroup } = useJoinToGroup({ groupId: group.id });
+  const { joinToGroup, isUserCanJoin, openApplyPopup } = useJoinToGroup({ groupId: group.id });
 
   return (
     <div className="bg-base-200 px-3 py-2 rounded-md border border-base-100 h-[200px] flex flex-col">
@@ -50,7 +50,7 @@ export const EngageCard: React.FC<{
           </Button.Purple>
         )
           : (
-            <Button.Purple onClick={applyToGroup}>
+            <Button.Purple onClick={openApplyPopup}>
               apply
             </Button.Purple>
           )}
