@@ -10,7 +10,6 @@ export const EngageCard: React.FC<{
 
   return (
     <div className="bg-base-200 px-3 py-2 rounded-md border border-base-100 h-[200px] flex flex-col">
-
       <div className="flex justify-between">
         <h1 className="text-2xl text-base-content">{group.name}</h1>
         <Badge.Common>
